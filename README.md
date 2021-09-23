@@ -1,5 +1,7 @@
 # 🎃 Postman Student API-First Hacktoberfest'21 
 
+Grab your candycorn and gear up for a spooky 
+
 ## What is API-First? 
 
 API-First is the philosophy of **designing an API before writing ANY code**. This design is documented a **schema**.
@@ -13,7 +15,10 @@ Imagine a team building a house without a [blueprint](http://www.designdepotinc.
 In the same way, designing an API's schema first allows teams to get on the same page about what is being built.
 
 
-## Prizes 
+## Rules 
+- Must be a student, or graduated but not yet working 
+- Must submit either an API or a website by the end of October
+- Must follow our Code of Conduct
 
 ## How to participate
 
@@ -38,13 +43,13 @@ Pick one and find instructions and requirements in these starter repos:
 [=> I want to build a Website (frontend)](https://github.com/Postman-Student-Program/hacktoberfest21-frontend-repo-template
 )
 
-*\* if you are planning to work on a team, only one person needs to fork the starter repo*
+*\* if you are planning to work on a team, only one person needs to fork the starter repo. This person will become the repo Maintainer*
 
 #### 4. Submit your repo 
 
-Once you've completed building an API or Website that meets the requirements, submit your repo [here]()!
+Submit your repo [here](), once you've completed building an API or Website that meets the requirements!
 
-If you 
+
 
 
 
@@ -59,13 +64,10 @@ https://postman.postman.co/workspace/Postman-Hacktoberfest'21-~1ae1036b-6583-488
 
 The schema is also synced to this repo in `postman/schemas`
 
-### So you wanna build a backend (API)
-
-### So you wanna build a frontend (website)
-
-## How to submit 
 
 ## Workshops + Office hours
+
+## Prizes 
 
 ## Resources
 
