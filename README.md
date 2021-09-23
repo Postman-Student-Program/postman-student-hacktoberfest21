@@ -11,5 +11,8 @@ TODO: event overview here
 
 ## How to submit 
 
+## Workshops + Office hours
+
+## Resources
 
 
