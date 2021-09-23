@@ -2,7 +2,7 @@
 
 ## What is API-First? 
 
-API-First is the philosophy of **designing an API before writing ANY code**. 
+API-First is the philosophy of **designing an API before writing ANY code**. This design is documented a **schema**.
 
 ### What is a schema?
 
