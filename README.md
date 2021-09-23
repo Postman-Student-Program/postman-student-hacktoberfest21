@@ -31,7 +31,7 @@ Sign up with this form. This will keep you in the loop with workshop accouncemen
 Do you want to build an API or a Website? 👀
 
 Pick one and find instructions and requirements in these starter repos:
-<div style="background-color:red;color:white;padding:2rem;">Foo testing</div>
+
 [=> I want to build an API (backend)](https://github.com/Postman-Student-Program/hacktoberfest21-backend-repo-template
 )
 
