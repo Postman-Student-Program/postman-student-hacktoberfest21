@@ -22,10 +22,12 @@ Pick one of two paths to participate, depending on your skills or interests!
 ### Backend path
 
 In this path you will build an API.
+https://github.com/Postman-Student-Program/hacktoberfest21-backend-repo-template
 
 ### Frontend path
 
 In this path you will build a website. 
+https://github.com/Postman-Student-Program/hacktoberfest21-frontend-repo-template
 
 ## What are we building? 
 
