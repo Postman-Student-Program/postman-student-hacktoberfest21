@@ -6,9 +6,11 @@ API-First is the philosophy of **designing an API before writing ANY code**.
 
 ### What is a schema?
 
-Imagine a team building a house without a [blueprint](http://www.designdepotinc.com/understanding-blueprints/). It would be chaos! The plumber would have to wait for the carpenters to start building the flooring and walls before they could think of where to install the shower and how much piping to procur. The painter wouldn't know how much paint to get. The electrician might buy the wrong type and number of wall sockets. To prevent this chaos, the first task in the house building process is to design a blueprint. This blueprint helps everyone on the team get on the same page and know exactly what is being built before any work starts. 
-
 A **schema** is the blueprint of an API. The schema defines exactly what routes the API will have, what kind of parameters to expect, and what type of responses the API will return.
+
+Imagine a team building a house without a [blueprint](http://www.designdepotinc.com/understanding-blueprints/). It would be chaos! The plumber would have to wait for the carpenters to start building the flooring and walls before they could guess where to install the shower and how much piping to procur. The painter wouldn't know how much paint to get. The electrician might buy the wrong type and number of wall sockets. 
+
+To prevent this chaos, the first task in the house building process is to design a blueprint. This blueprint helps everyone on the team know exactly what is being built before any work starts, allowing people to divide and conquer. In the same way, designing an API's schema first allows teams to get on the same page about what is being built.
 
 
 ## Prizes 
