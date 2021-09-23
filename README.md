@@ -29,7 +29,7 @@ Sign up with this form. This will keep you in the loop with workshop accouncemen
 
 Do you want to build an API or a Website? 👀
 
-Pick one and find instructions in these start repos:
+Pick one and find instructions and requirements in these starter repos:
 
 [=> I want to build an API (backend)](https://github.com/Postman-Student-Program/hacktoberfest21-backend-repo-template
 )
@@ -37,9 +37,14 @@ Pick one and find instructions in these start repos:
 [=> I want to build a Website (frontend)](https://github.com/Postman-Student-Program/hacktoberfest21-frontend-repo-template
 )
 
+*\* if you are planning to work on a team, only one person needs to fork the starter repo*
+
 #### 4. Submit your repo 
-Once you've completed the tasks 
-Pick one of two paths to participate, depending on your skills or interests!
+
+Once you've completed building an API or Website that meets the requirements, submit your repo [here]()!
+
+If you 
+
 
 
 ## What are we building? 
