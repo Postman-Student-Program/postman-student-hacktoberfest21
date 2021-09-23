@@ -7,7 +7,27 @@
     },
     "item": [
         {
-            "name": "get API status",
+            "name": "1. get API status",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "id": "c219ba15-af72-43e9-bae4-43a6c5ccbfe3",
+                        "exec": [
+                            "pm.test(\"Status code is 200\", function () {",
+                            "    pm.response.to.have.status(200);",
+                            "});",
+                            "",
+                            "const body = pm.response.json()",
+                            "",
+                            "pm.test(\"Returns a JSON object with an `message` property that is a string\", function () {",
+                            "    pm.expect(body.message).to.be.a('string')",
+                            "});"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
             "id": "5488fa4d-82aa-46ab-8cf8-aac1eeabdd2a",
             "protocolProfileBehavior": {
                 "disableBodyPruning": true
@@ -28,7 +48,7 @@
             "response": []
         },
         {
-            "name": "add a contestant",
+            "name": "2. add a contestant",
             "event": [
                 {
                     "listen": "test",
@@ -41,7 +61,7 @@
                             "",
                             "const body = pm.response.json()",
                             "",
-                            "pm.test(\"Response should return a JSON object with an `id` property that is a string\", function () {",
+                            "pm.test(\"Returns a JSON object with an `id` property that is a string\", function () {",
                             "    pm.expect(body.id).to.be.a('string')",
                             "});"
                         ],
@@ -78,7 +98,7 @@
             "response": []
         },
         {
-            "name": "get all contestants",
+            "name": "3. get all contestants",
             "event": [
                 {
                     "listen": "test",
@@ -91,11 +111,19 @@
                             "",
                             "const body = pm.response.json()",
                             "",
-                            "pm.test(\"Response to return an array of contestants of the correct shape\", function () {",
+                            "pm.test(\"Returns an array of contestants of the correct shape\", function () {",
                             "    pm.expect(body).to.be.an('array')",
                             "    pm.expect(body.length).to.be.at.least(1) // from contestant added in previous request",
-                            "    // const contestant1 = body[0]",
-                            "    // pm.expect(contestant1).to,have",
+                            "    ",
+                            "    // check contestant shape",
+                            "    const contestant1 = body[0]",
+                            "    pm.expect(contestant1.id).to.be.a('string')",
+                            "    pm.expect(contestant1.name).to.be.a('string')",
+                            "    pm.expect(contestant1.costumeTitle).to.be.a('string')",
+                            "    pm.expect(contestant1.costumeImgUrl).to.be.a('string')",
+                            "    pm.expect(contestant1.city).to.be.a('string')",
+                            "    pm.expect(contestant1.country).to.be.a('string')",
+                            "    pm.expect(contestant1.votes).to.be.a('number')",
                             "});"
                         ],
                         "type": "text/javascript"
@@ -120,13 +148,72 @@
                 }
             },
             "response": []
+        },
+        {
+            "name": "4. get the added contestant",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "id": "4acda362-2c1b-4ff4-a303-21e026b59c62",
+                        "exec": [
+                            "pm.test(\"Status code is 200\", function () {",
+                            "    pm.response.to.have.status(200);",
+                            "});",
+                            "",
+                            "const body = pm.response.json()",
+                            "",
+                            "pm.test(\"Returns an array of contestants of the correct shape\", function () {",
+                            "    pm.expect(body).to.be.an('array')",
+                            "    pm.expect(body.length).to.be.at.least(1) // from contestant added in previous request",
+                            "    ",
+                            "    // check contestant shape",
+                            "    const contestant1 = body[0]",
+                            "    pm.expect(contestant1.id).to.be.a('string')",
+                            "    pm.expect(contestant1.name).to.be.a('string')",
+                            "    pm.expect(contestant1.costumeTitle).to.be.a('string')",
+                            "    pm.expect(contestant1.costumeImgUrl).to.be.a('string')",
+                            "    pm.expect(contestant1.city).to.be.a('string')",
+                            "    pm.expect(contestant1.country).to.be.a('string')",
+                            "    pm.expect(contestant1.votes).to.be.a('number')",
+                            "});"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "id": "f0d33609-697f-4f45-9386-aa1335200375",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/contestants/:id",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "contestants",
+                        ":id"
+                    ],
+                    "variable": [
+                        {
+                            "key": "id",
+                            "value": "{{id}}"
+                        }
+                    ]
+                }
+            },
+            "response": []
         }
     ],
     "event": [
         {
             "listen": "prerequest",
             "script": {
-                "id": "8df706f4-2216-49ed-a7a2-02077c57ce33",
+                "id": "3739e978-f2b0-4b6f-b866-b3e13bf34c3a",
                 "type": "text/javascript",
                 "exec": [
                     ""
@@ -136,7 +223,7 @@
         {
             "listen": "test",
             "script": {
-                "id": "eca6b55c-1b6c-4520-963c-6d5ece8cecd2",
+                "id": "378c2033-c7a4-48bf-ab06-a158c267732b",
                 "type": "text/javascript",
                 "exec": [
                     ""
@@ -146,37 +233,32 @@
     ],
     "variable": [
         {
-            "id": "6cc2bc41-9b4d-44a1-a2bf-07156d986b14",
+            "id": "1024a99e-c70d-4006-a9f1-850869b8fe8f",
             "key": "baseUrl",
             "value": "https://your-api-url.foo"
         },
         {
-            "id": "f0eefd7c-1f78-417b-854e-eb084166176b",
-            "key": "exampleContestantId",
-            "value": "auniqueid"
-        },
-        {
-            "id": "5f912e73-d130-4c69-bf10-62c513d178ae",
+            "id": "c47beaa5-b83a-4de3-bf7f-f4375f0340de",
             "key": "contestantName",
             "value": "Clark Kent"
         },
         {
-            "id": "f9a3c83c-ae71-46eb-a5f2-d844586ec743",
+            "id": "c3947427-ceae-4a7d-9e53-26f75640ab3a",
             "key": "contestantCostumeTitle",
             "value": "Superman"
         },
         {
-            "id": "b4acbe05-2c27-4d31-ad5b-1bc57e44669d",
+            "id": "fe5485bd-0607-445a-9d60-006cd3cbda50",
             "key": "contestantCostumeImgUrl",
             "value": "https://images.unsplash.com/photo-1538051046377-5ad74dc62f95?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
         },
         {
-            "id": "970ce871-3337-492f-9ed0-9c2264b2fbb2",
+            "id": "bf22c169-e11b-4042-84ca-fbcbd2f4a2cd",
             "key": "contestantCity",
             "value": "New York City"
         },
         {
-            "id": "35fbee2d-f0f8-4d2f-9038-522fea4477b8",
+            "id": "ff23b7f7-bed8-4524-8c2b-231f7b859b3a",
             "key": "contestantCountry",
             "value": "USA"
         }

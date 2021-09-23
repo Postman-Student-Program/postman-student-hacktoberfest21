@@ -26,22 +26,9 @@ paths:
     get:
       summary: "Get Contestants"
       operationId: getContestants
-      parameters:
-        - name: country
-          in: query
-          description: 'A country to filter for'
-          required: false
-          schema:
-            type: string
-        - name: costumeTitleSearch
-          in: query
-          description: 'A keyword to search for costumes (partial matches OK)'
-          required: false
-          schema:
-            type: string
       responses:
         '200':
-          description: 'A list of all contestants that meet the parameters'
+          description: 'A list of all contestants'
           content:
             application/json:
               schema:
@@ -121,9 +108,12 @@ paths:
               schema:
                 type: object
                 properties: 
+                  status:
+                    type: string
                   id: 
                     type: string
               example:
+                status: ok
                 id: "QwErTy"
         "400":
           description: "Bad Request"
@@ -205,16 +195,10 @@ paths:
               schema:
                 type: object
                 properties: 
-                  message: 
+                  status: 
                     type: string
               example:
-                id: qwerty
-                name: Abhinav Asthana
-                costumeTitle: Skeleton
-                costumeImgUrl: "https://images.unsplash.com/photo-1601516313188-cae9fcaad936?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=626&q=80"
-                city: San Francisco
-                country: USA
-                votes: 12
+                status: ok     
         '400':
           description: 'Bad request'
           content:
@@ -260,10 +244,10 @@ paths:
               schema:
                 type: object
                 properties: 
-                  message: 
+                  status: 
                     type: string
               example:
-                message: success
+                status: ok
         '404':
           description: Contestant not found
           content:
@@ -283,7 +267,7 @@ paths:
                 status: error
                 message: Something went wrong
   /contestants/{id}/upvote:
-    post:
+    patch:
       summary: "Upvote a contestant (+1 vote)"
       operationId: upvoteContestant
       parameters:
@@ -294,15 +278,38 @@ paths:
           schema:
             type: string
       responses:
-        "204":
+        '200':
           description: "Upvote successful"
           content:
             application/json:
               schema:
                 type: object
                 properties: 
-                  message: 
+                  status: 
                     type: string
+                  votes: 
+                    type: number
+              example:
+                status: ok
+                votes: 12
+        '404':
+          description: 'Contestant not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: error
+                message: Contestant not found
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: error
+                message: Something went wrong
 components:
   schemas:
     Contestant:

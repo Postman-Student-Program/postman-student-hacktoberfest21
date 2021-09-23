@@ -1,0 +1,865 @@
+{
+    "info": {
+        "_postman_id": "097eb31d-3c5a-4b40-90de-870efc823a94",
+        "name": "[_Docs] Halloween Costume Contest API",
+        "description": "Click the triple dots on the collection folder (`...`) and select \"View Documentation\" to view this API's documentation.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "contestants",
+            "item": [
+                {
+                    "name": "{id}",
+                    "item": [
+                        {
+                            "name": "Get a contestant",
+                            "id": "e86228cd-33e2-4eb8-b142-ec263ca42fa8",
+                            "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                            },
+                            "request": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "x-mock-response-code",
+                                        "value": "200",
+                                        "description": "(used for Postman mock servers only)",
+                                        "type": "text",
+                                        "disabled": true
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/contestants/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "contestants",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "qwerty",
+                                            "description": "(Required) The id of a contestant"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "id": "9a817493-ab7e-4d81-80dc-b5c7e961c71b",
+                                    "name": "A contestant",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/contestants/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "contestants",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{\n \"id\": \"qwerty\",\n \"name\": \"Abhinav Asthana\",\n \"costumeTitle\": \"Astronaut\",\n \"costumeImgUrl\": \"https://images.unsplash.com/photo-1581822261290-991b38693d1b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80\",\n \"city\": \"San Francisco\",\n \"country\": \"USA\",\n \"votes\": 12\n}"
+                                },
+                                {
+                                    "id": "4bb9649c-7c9d-4a37-8d59-143478c457e6",
+                                    "name": "Contestant not found",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/contestants/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "contestants",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "Not Found",
+                                    "code": 404,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{\n \"status\": \"error\",\n \"message\": \"Contestant not found\"\n}"
+                                },
+                                {
+                                    "id": "b0bb3876-a058-4c73-84e6-c8edb1ecea51",
+                                    "name": "Unexpected error",
+                                    "originalRequest": {
+                                        "method": "GET",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/contestants/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "contestants",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "Internal Server Error",
+                                    "code": 500,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{\n \"status\": \"error\",\n \"message\": \"Something went wrong\"\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Update a contestant (except id or votes)",
+                            "id": "13588683-d720-40b5-9de0-f89a27c3b7f8",
+                            "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                            },
+                            "request": {
+                                "method": "PATCH",
+                                "header": [
+                                    {
+                                        "key": "x-mock-response-code",
+                                        "value": "200",
+                                        "description": "(used for Postman mock servers only)",
+                                        "type": "text"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"name\": \"Bruce Wayne\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/contestants/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "contestants",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "qwerty",
+                                            "description": "(Required) the id of a contestant"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "id": "ee21eb91-9132-4f0c-9f53-3839c1a8f9fb",
+                                    "name": "Update successful",
+                                    "originalRequest": {
+                                        "method": "PATCH",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/contestants/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "contestants",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{\n \"id\": \"qwerty\",\n \"name\": \"Abhinav Asthana\",\n \"costumeTitle\": \"Skeleton\",\n \"costumeImgUrl\": \"https://images.unsplash.com/photo-1601516313188-cae9fcaad936?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=626&q=80\",\n \"city\": \"San Francisco\",\n \"country\": \"USA\",\n \"votes\": 12\n}"
+                                },
+                                {
+                                    "id": "9d215f82-385b-4241-9187-01ea29ab95af",
+                                    "name": "Bad request",
+                                    "originalRequest": {
+                                        "method": "PATCH",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/contestants/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "contestants",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "Bad Request",
+                                    "code": 400,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{\n \"status\": \"error\",\n \"message\": \"costumeTitle must be a string\"\n}"
+                                },
+                                {
+                                    "id": "d6c74a8b-e3bd-4610-ba6a-1a951ba53822",
+                                    "name": "Contestant not found",
+                                    "originalRequest": {
+                                        "method": "PATCH",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/contestants/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "contestants",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "Not Found",
+                                    "code": 404,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{\n \"status\": \"error\",\n \"message\": \"Contestant not found\"\n}"
+                                },
+                                {
+                                    "id": "04e6e9f6-fb92-4a36-a99e-3986c70414a4",
+                                    "name": "Unexpected error",
+                                    "originalRequest": {
+                                        "method": "PATCH",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/contestants/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "contestants",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "Internal Server Error",
+                                    "code": 500,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{\n \"status\": \"error\",\n \"message\": \"Something went wrong\"\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Delete a contestant",
+                            "id": "21ca7351-490e-4451-9e76-e0a244f0e7fc",
+                            "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                            },
+                            "request": {
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "x-mock-response-code",
+                                        "value": "200",
+                                        "description": "(used for Postman mock servers only)",
+                                        "type": "text",
+                                        "disabled": true
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/contestants/:id",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "contestants",
+                                        ":id"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "qwerty",
+                                            "description": "(Required) The id of a contestant"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "id": "fdd2943c-deb4-4b2c-926d-266a91386b6b",
+                                    "name": "Delete successful",
+                                    "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/contestants/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "contestants",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{\n \"message\": \"success\"\n}"
+                                },
+                                {
+                                    "id": "5b214eec-9d9f-4c2c-8a8f-8f79b5ab5e4d",
+                                    "name": "Contestant not found",
+                                    "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/contestants/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "contestants",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "Not Found",
+                                    "code": 404,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{\n \"status\": \"error\",\n \"message\": \"Contestant not found\"\n}"
+                                },
+                                {
+                                    "id": "35333c79-fb84-48c5-b288-54c056e34d19",
+                                    "name": "Unexpected error",
+                                    "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/contestants/:id",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "contestants",
+                                                ":id"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "Internal Server Error",
+                                    "code": 500,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{\n \"status\": \"error\",\n \"message\": \"Something went wrong\"\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Upvote a contestant (+1 vote)",
+                            "id": "09a3a8e6-8d81-42bd-91c2-16f0f04d5d3e",
+                            "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                            },
+                            "request": {
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/contestants/:id/upvote",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "contestants",
+                                        ":id",
+                                        "upvote"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "id",
+                                            "value": "qwerty",
+                                            "description": "(Required) The id of a contestant"
+                                        }
+                                    ]
+                                }
+                            },
+                            "response": [
+                                {
+                                    "id": "5247c2a7-6e1c-43fb-9570-e2102ee930f0",
+                                    "name": "Upvote successful",
+                                    "originalRequest": {
+                                        "method": "POST",
+                                        "header": [],
+                                        "url": {
+                                            "raw": "{{baseUrl}}/contestants/:id/upvote",
+                                            "host": [
+                                                "{{baseUrl}}"
+                                            ],
+                                            "path": [
+                                                "contestants",
+                                                ":id",
+                                                "upvote"
+                                            ],
+                                            "variable": [
+                                                {
+                                                    "key": "id"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "status": "OK",
+                                    "code": 200,
+                                    "_postman_previewlanguage": "json",
+                                    "header": [
+                                        {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                        }
+                                    ],
+                                    "cookie": [],
+                                    "responseTime": null,
+                                    "body": "{\n \"votes\": 12\n}"
+                                }
+                            ]
+                        }
+                    ],
+                    "id": "7c8dde0f-3536-4129-a5f2-059f55adb96a"
+                },
+                {
+                    "name": "Get Contestants",
+                    "id": "e5474030-958a-4239-b8f0-1f374f26c324",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/contestants",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "contestants"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "2f25211f-9d8e-4d89-b864-808bc483fd67",
+                            "name": "A list of all contestants that meet the parameters",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/contestants?country=ut velit qui&costumeTitleSearch=ut velit qui",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "contestants"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "country",
+                                            "value": "ut velit qui"
+                                        },
+                                        {
+                                            "key": "costumeTitleSearch",
+                                            "value": "ut velit qui"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "[\n {\n  \"id\": \"qwerty\",\n  \"name\": \"Abhinav Asthana\",\n  \"costumeTitle\": \"Astronaut\",\n  \"costumeImgUrl\": \"https://images.unsplash.com/photo-1581822261290-991b38693d1b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80\",\n  \"city\": \"San Francisco\",\n  \"country\": \"USA\",\n  \"votes\": 12\n },\n {\n  \"id\": \"asdfgh\",\n  \"name\": \"Ankit Sobti\",\n  \"costumeTitle\": \"Ghost\",\n  \"costumeImgUrl\": \"https://images.unsplash.com/photo-1604013527955-f310df076541?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=757&q=80\",\n  \"city\": \"San Francisco\",\n  \"country\": \"USA\",\n  \"votes\": 1\n },\n {\n  \"id\": \"zxcvbn\",\n  \"name\": \"Abhijit Kane\",\n  \"costumeTitle\": \"Pumpkin Zombie\",\n  \"costumeImgUrl\": \"https://images.unsplash.com/photo-1540427969750-1424f2fa0af8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=764&q=80\",\n  \"city\": \"Delhi\",\n  \"country\": \"India\",\n  \"votes\": 25\n }\n]"
+                        },
+                        {
+                            "id": "1d799112-2c55-416a-bcef-1770c57cc766",
+                            "name": "Unexpected error",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/contestants?country=ut velit qui&costumeTitleSearch=ut velit qui",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "contestants"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "country",
+                                            "value": "ut velit qui"
+                                        },
+                                        {
+                                            "key": "costumeTitleSearch",
+                                            "value": "ut velit qui"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "Internal Server Error",
+                            "code": 500,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n \"status\": \"error\",\n \"message\": \"ex sint eu\"\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Add a contestant",
+                    "id": "39eb62dc-b621-48a6-82af-a956acf24af2",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Bruce Wayne\",\n    \"costumeTitle\": \"Batman\",\n    \"costumeImgUrl\": \"https://images.unsplash.com/photo-1531259683007-016a7b628fc3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80\",\n    \"city\": \"Gotham City\",\n    \"country\": \"USA\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/contestants",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "contestants"
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "9d02a9ec-5db8-4d89-8281-ba5703e63e2e",
+                            "name": "Contestant created successfully",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"name\": \"Bruce Wayne\",\n    \"costumeTitle\": \"Batman\",\n    \"costumeImgUrl\": \"https://images.unsplash.com/photo-1531259683007-016a7b628fc3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80\",\n    \"city\": \"Gotham City\",\n    \"country\": \"USA\"\n}"
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/contestants",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "contestants"
+                                    ]
+                                }
+                            },
+                            "status": "Created",
+                            "code": 201,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n \"id\": \"QwErTy\"\n}"
+                        },
+                        {
+                            "id": "3af18a78-7499-48da-9148-7aee422fe21d",
+                            "name": "Bad Request",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"name\": \"Bruce Wayne\",\n    \"costumeTitle\": \"Batman\",\n    \"costumeImgUrl\": \"https://images.unsplash.com/photo-1531259683007-016a7b628fc3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80\",\n    \"city\": \"Gotham City\",\n    \"country\": \"USA\"\n}"
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/contestants",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "contestants"
+                                    ]
+                                }
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n \"status\": \"error\",\n \"message\": \"Must provide costumeImgUrl\"\n}"
+                        },
+                        {
+                            "id": "15658135-217c-44a8-8261-87fd1544fe73",
+                            "name": "Unexpected error",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n    \"name\": \"Bruce Wayne\",\n    \"costumeTitle\": \"Batman\",\n    \"costumeImgUrl\": \"https://images.unsplash.com/photo-1531259683007-016a7b628fc3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80\",\n    \"city\": \"Gotham City\",\n    \"country\": \"USA\"\n}"
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/contestants",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "contestants"
+                                    ]
+                                }
+                            },
+                            "status": "Internal Server Error",
+                            "code": 500,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n \"status\": \"error\",\n \"message\": \"Something went wrong\"\n}"
+                        }
+                    ]
+                }
+            ],
+            "id": "92714076-eaae-4954-b2eb-3bcf8370d614"
+        },
+        {
+            "name": "Get API status",
+            "id": "7badf32c-9af3-436a-8a5f-44f513983a21",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        ""
+                    ]
+                }
+            },
+            "response": [
+                {
+                    "id": "9ca698f3-2891-4578-910c-21ff490a0e44",
+                    "name": "OK",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                ""
+                            ]
+                        }
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": null,
+                    "body": "{\n \"message\": \"OK\"\n}"
+                }
+            ]
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "id": "d13c4538-206f-44a7-834a-04aea032ad28",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "id": "8d7a5532-e0bd-424f-bbc4-492b8c307cc2",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "id": "3e246e51-c2e6-4d1f-85b9-5c8385053000",
+            "key": "baseUrl",
+            "value": "https://6c841112-7c87-47ef-a956-03b6484aa343.mock.pstmn.io"
+        }
+    ]
+}
