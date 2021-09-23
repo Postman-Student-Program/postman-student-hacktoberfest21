@@ -19,7 +19,7 @@ In the same way, designing an API's schema first allows teams to get on the same
 
 #### 1. Sign up for Hacktoberfest (by Digitalocean)
 
-If you want to be eligible for a T-Shirt by making 4 pull requests in October.
+Optional - if you want to be eligible for a T-Shirt by making 4 pull requests during the month of October 
 
 *\* T-Shirts available only for the first 55,000 participants*
 
