@@ -17,17 +17,30 @@ In the same way, designing an API's schema first allows teams to get on the same
 
 ## How to participate
 
+#### 1. Sign up for Hacktoberfest (by Digitalocean)
+
+If you want to be eligible for a T-Shirt by making 4 pull requests in October.
+\*First 55,000 participants
+
+#### 2. Sign up for Postman's Hacktoberfest 
+Sign up with this form. This will keep you in the loop with workshop accouncements and updates!
+
+#### 3. Choose your path!
+
+Do you want to build an API or a Website? 👀
+
+Pick one and find instructions in these start repos:
+
+[API (backend)](https://github.com/Postman-Student-Program/hacktoberfest21-backend-repo-template
+)
+
+[Website (frontend)](https://github.com/Postman-Student-Program/hacktoberfest21-frontend-repo-template
+)
+
+#### 4. Submit your repo 
+Once you've completed the tasks 
 Pick one of two paths to participate, depending on your skills or interests!
 
-### Backend path
-
-In this path you will build an API.
-https://github.com/Postman-Student-Program/hacktoberfest21-backend-repo-template
-
-### Frontend path
-
-In this path you will build a website. 
-https://github.com/Postman-Student-Program/hacktoberfest21-frontend-repo-template
 
 ## What are we building? 
 
