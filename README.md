@@ -37,11 +37,11 @@ Do you want to build an API or a Website? 👀
 
 Pick one and find instructions and requirements in these starter repos:
 
-#### [=> I want to build an API (backend)](https://github.com/Postman-Student-Program/hacktoberfest21-backend-repo-template
-)
+**[=> I want to build an API (backend)](https://github.com/Postman-Student-Program/hacktoberfest21-backend-repo-template
+)**
 
-#### [=> I want to build a Website (frontend)](https://github.com/Postman-Student-Program/hacktoberfest21-frontend-repo-template
-)
+**[=> I want to build a Website (frontend)](https://github.com/Postman-Student-Program/hacktoberfest21-frontend-repo-template
+)**
 
 *\* if you are planning to work on a team, only one person needs to fork the starter repo. This person will become the repo Maintainer*
 
