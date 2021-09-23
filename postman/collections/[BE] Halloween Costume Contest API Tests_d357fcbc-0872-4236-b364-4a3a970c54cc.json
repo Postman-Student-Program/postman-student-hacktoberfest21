@@ -1,0 +1,184 @@
+{
+    "info": {
+        "_postman_id": "96f91b20-f497-43aa-a7f9-f1443bdd3a71",
+        "name": "[BE] Halloween Costume Contest API Tests",
+        "description": "This collection contains a series of tests to run against your API continuously while you develop. \n\nYour goal is to keep updating your API until it passses all the tests. This proves that your API meets all the specification requirements!\n\n## How to test your API \n\n### 1. Fork this collection\n\nMake a copy of this collection to your own workspace by clicking the triple dot icon (`...`) on the collection folder and selecting `Create a fork`. Fork the collection to a personal or team workspace.\n\n### 2. Update the baseUrl\n\nIn the collection variables tab, update the `baseUrl` value to the URL of your API. \n\nYou can use a deployed public URL, or `http://localhost:<PORT>` if you are serving your API locally.\n\n### 3. Run the collection \n\nTest Driven Development (TDD) time! \n\nWhile you develop your API, run the entire collection by using the [Collection Runner](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/). \n\nYou can access the Collection Runner from the \"Runner\" button in the lower right corner of Postman, or by clicking the triple dots on the collection folder and selecting `Run collection`, or from the \"Run\" (play button) icon on the collection's main page. \n\nClicking Run in the collection runner will start running all the requests and their tests in this folder. You will be notified of failing tests. Keep updating your API until it passes all the tests!",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "get API status",
+            "id": "5488fa4d-82aa-46ab-8cf8-aac1eeabdd2a",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        ""
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "add a contestant",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "id": "fd60b76d-5e9f-45c6-92d0-3f1c5040d0c8",
+                        "exec": [
+                            "pm.test(\"Status code is 201\", function () {",
+                            "    pm.response.to.have.status(201);",
+                            "});",
+                            "",
+                            "const body = pm.response.json()",
+                            "",
+                            "pm.test(\"Response should return a JSON object with an `id` property that is a string\", function () {",
+                            "    pm.expect(body.id).to.be.a('string')",
+                            "});"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "id": "0b30b0bc-1111-4437-a393-938d72f1336d",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"{{contestantName}}\",\n    \"costumeTitle\": \"{{contestantCostumeTitle}}\",\n    \"costumeImgUrl\": \"{{contestantCostumeImgUrl}}\",\n    \"city\": \"{{contestantCity}}\",\n    \"country\": \"{{contestantCountry}}\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/contestants",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "contestants"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "get all contestants",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "id": "4acda362-2c1b-4ff4-a303-21e026b59c62",
+                        "exec": [
+                            "pm.test(\"Status code is 200\", function () {",
+                            "    pm.response.to.have.status(200);",
+                            "});",
+                            "",
+                            "const body = pm.response.json()",
+                            "",
+                            "pm.test(\"Response to return an array of contestants of the correct shape\", function () {",
+                            "    pm.expect(body).to.be.an('array')",
+                            "    pm.expect(body.length).to.be.at.least(1) // from contestant added in previous request",
+                            "    // const contestant1 = body[0]",
+                            "    // pm.expect(contestant1).to,have",
+                            "});"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "id": "6f0eb721-6c73-47f7-836b-3e77d0e25036",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{baseUrl}}/contestants",
+                    "host": [
+                        "{{baseUrl}}"
+                    ],
+                    "path": [
+                        "contestants"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "id": "8df706f4-2216-49ed-a7a2-02077c57ce33",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "id": "eca6b55c-1b6c-4520-963c-6d5ece8cecd2",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "id": "6cc2bc41-9b4d-44a1-a2bf-07156d986b14",
+            "key": "baseUrl",
+            "value": "https://your-api-url.foo"
+        },
+        {
+            "id": "f0eefd7c-1f78-417b-854e-eb084166176b",
+            "key": "exampleContestantId",
+            "value": "auniqueid"
+        },
+        {
+            "id": "5f912e73-d130-4c69-bf10-62c513d178ae",
+            "key": "contestantName",
+            "value": "Clark Kent"
+        },
+        {
+            "id": "f9a3c83c-ae71-46eb-a5f2-d844586ec743",
+            "key": "contestantCostumeTitle",
+            "value": "Superman"
+        },
+        {
+            "id": "b4acbe05-2c27-4d31-ad5b-1bc57e44669d",
+            "key": "contestantCostumeImgUrl",
+            "value": "https://images.unsplash.com/photo-1538051046377-5ad74dc62f95?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+        },
+        {
+            "id": "970ce871-3337-492f-9ed0-9c2264b2fbb2",
+            "key": "contestantCity",
+            "value": "New York City"
+        },
+        {
+            "id": "35fbee2d-f0f8-4d2f-9038-522fea4477b8",
+            "key": "contestantCountry",
+            "value": "USA"
+        }
+    ]
+}

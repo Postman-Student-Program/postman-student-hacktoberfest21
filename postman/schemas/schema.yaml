@@ -1,0 +1,343 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Halloween Costume Contest API
+servers:
+  - url: "https://your-api-url.foo"
+paths:
+  /:
+    get:
+      summary: "Get API status"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object 
+                required:
+                  - message
+                properties: 
+                  message: 
+                    type: string 
+              example:
+                message: "OK"
+  /contestants:
+    get:
+      summary: "Get Contestants"
+      operationId: getContestants
+      parameters:
+        - name: country
+          in: query
+          description: 'A country to filter for'
+          required: false
+          schema:
+            type: string
+        - name: costumeTitleSearch
+          in: query
+          description: 'A keyword to search for costumes (partial matches OK)'
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'A list of all contestants that meet the parameters'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contestant'
+              example:
+                - id: qwerty
+                  name: Abhinav Asthana
+                  costumeTitle: Astronaut
+                  costumeImgUrl: "https://images.unsplash.com/photo-1581822261290-991b38693d1b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80"
+                  city: San Francisco
+                  country: USA
+                  votes: 12
+                - id: asdfgh
+                  name: Ankit Sobti
+                  costumeTitle: Ghost
+                  costumeImgUrl: "https://images.unsplash.com/photo-1604013527955-f310df076541?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=757&q=80"
+                  city: San Francisco
+                  country: USA
+                  votes: 1
+                - id: zxcvbn
+                  name: Abhijit Kane
+                  costumeTitle: Pumpkin Zombie
+                  costumeImgUrl: "https://images.unsplash.com/photo-1540427969750-1424f2fa0af8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=764&q=80"
+                  city: Delhi
+                  country: India
+                  votes: 25         
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      summary: "Add a contestant"
+      operationId: createContestant
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                costumeTitle: 
+                  type: string
+                  minLength: 1
+                costumeImgUrl:
+                  type: string
+                  minLength: 1
+                city: 
+                  type: string
+                  minLength: 1
+                country:
+                  type: string
+                  minLength: 1
+              required:
+                - name
+                - costumeTitle
+                - costumeImgUrl
+                - city
+                - country
+            example:
+              name: Bruce Wayne
+              costumeTitle: Batman
+              costumeImgUrl: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80"
+              city: Gotham City
+              country: USA
+      responses:
+        "201":
+          description: "Contestant created successfully"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: 
+                  id: 
+                    type: string
+              example:
+                id: "QwErTy"
+        "400":
+          description: "Bad Request"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                status: error
+                message: Must provide costumeImgUrl
+        default:
+          description: "Unexpected error"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                status: error
+                message: Something went wrong
+  /contestants/{id}:
+    get:
+      summary: "Get a contestant"
+      operationId: getContestant
+      parameters:
+        - name: id
+          in: path
+          description: "The id of a contestant"
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'A contestant'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contestant'
+              example:
+                id: qwerty
+                name: Abhinav Asthana
+                costumeTitle: Astronaut
+                costumeImgUrl: "https://images.unsplash.com/photo-1581822261290-991b38693d1b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80"
+                city: San Francisco
+                country: USA
+                votes: 12
+        '404':
+          description: 'Contestant not found'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: error
+                message: Contestant not found
+        default:
+          description: 'Unexpected error'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: error
+                message: Something went wrong
+    patch:
+      summary: "Update a contestant (except id or votes)"
+      operationId: updateContestant
+      parameters:
+        - name: id
+          in: path
+          description: 'the id of a contestant'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'Update successful'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: 
+                  message: 
+                    type: string
+              example:
+                id: qwerty
+                name: Abhinav Asthana
+                costumeTitle: Skeleton
+                costumeImgUrl: "https://images.unsplash.com/photo-1601516313188-cae9fcaad936?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=626&q=80"
+                city: San Francisco
+                country: USA
+                votes: 12
+        '400':
+          description: 'Bad request'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: error
+                message: costumeTitle must be a string
+        '404':
+          description: Contestant not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: error
+                message: Contestant not found
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: error
+                message: Something went wrong
+    delete:
+      summary: "Delete a contestant"
+      operationId: deleteContestant
+      parameters:
+        - name: id
+          in: path
+          description: 'The id of a contestant'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'Delete successful'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: 
+                  message: 
+                    type: string
+              example:
+                message: success
+        '404':
+          description: Contestant not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: error
+                message: Contestant not found
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: error
+                message: Something went wrong
+  /contestants/{id}/upvote:
+    post:
+      summary: "Upvote a contestant (+1 vote)"
+      operationId: upvoteContestant
+      parameters:
+        - name: id
+          in: path
+          description: "The id of a contestant"
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: "Upvote successful"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: 
+                  message: 
+                    type: string
+components:
+  schemas:
+    Contestant:
+      type: object 
+      required: 
+        - id
+        - name
+        - costumeTitle
+        - costumeImgUrl
+        - city
+        - country
+        - votes
+      properties: 
+        id: 
+          type: string
+        name: 
+          type: string
+        costumeTitle:
+          type: string
+        costumeImgUrl: 
+          type: string
+        city: 
+          type: string
+        country: 
+          type: string
+        votes:
+          type: number
+    Error:
+      type: object
+      required:
+        - status
+        - message
+      properties:
+        status:
+          type: string
+          enum: [error]
+        message:
+          type: string
