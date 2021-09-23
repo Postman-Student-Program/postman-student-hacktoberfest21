@@ -16,12 +16,12 @@ paths:
               schema:
                 type: object 
                 required:
-                  - message
+                  - status
                 properties: 
-                  message: 
+                  status: 
                     type: string 
               example:
-                message: "OK"
+                status: "ok"
   /contestants:
     get:
       summary: "Get Contestants"
@@ -107,6 +107,9 @@ paths:
             application/json:
               schema:
                 type: object
+                required:
+                  - status
+                  - id
                 properties: 
                   status:
                     type: string
@@ -194,6 +197,8 @@ paths:
             application/json:
               schema:
                 type: object
+                required:
+                  - status
                 properties: 
                   status: 
                     type: string
@@ -243,6 +248,8 @@ paths:
             application/json:
               schema:
                 type: object
+                required:
+                  - status
                 properties: 
                   status: 
                     type: string
@@ -284,6 +291,9 @@ paths:
             application/json:
               schema:
                 type: object
+                required:
+                  - status
+                  - votes
                 properties: 
                   status: 
                     type: string
