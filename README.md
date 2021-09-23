@@ -1,6 +1,6 @@
 # 🎃 Postman Student API-First Hacktoberfest'21 
 
-Grab your candycorn and gear up for a spooky 
+This Hacktoberfest we are mixing it up - YOU get to create and maintain an open source repo (or work together with friends).
 
 ## What is API-First? 
 
@@ -22,16 +22,16 @@ In the same way, designing an API's schema first allows teams to get on the same
 
 ## How to participate
 
-#### 1. Sign up for Hacktoberfest (by Digitalocean)
+### 1. Sign up for Hacktoberfest (by Digitalocean)
 
 Optional - if you want to be eligible for a T-Shirt by making 4 pull requests during the month of October 
 
 *\* T-Shirts available only for the first 55,000 participants*
 
-#### 2. Sign up for Postman's Hacktoberfest 
+### 2. Sign up for Postman's Hacktoberfest 
 Sign up with this form. This will keep you in the loop with workshop accouncements and updates!
 
-#### 3. Choose your path!
+### 3. Choose your path!
 
 Do you want to build an API or a Website? 👀
 
@@ -45,12 +45,11 @@ Pick one and find instructions and requirements in these starter repos:
 
 *\* if you are planning to work on a team, only one person needs to fork the starter repo. This person will become the repo Maintainer*
 
-#### 4. Submit your repo 
+### 4. Submit your repo 
 
 Submit your repo [here](), once you've completed building an API or Website that meets the requirements!
 
-
-
+If a repo had multiple contirbutors, each contributor should submit the same repo separately. 
 
 
 ## What are we building? 
