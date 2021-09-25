@@ -22,14 +22,16 @@ In the same way, designing an API's schema first allows teams to get on the same
 
 ## How to participate
 
-### 1. [Optional] Sign up for Hacktoberfest (by DigitalOcean)
+### 1. Sign up for Postman's Hacktoberfest 
+Sign up with this form. This will keep you in the loop with workshop accouncements and updates!
+
+### 2. [Optional] Sign up for Hacktoberfest (by DigitalOcean)
 
 DigitalOcean hosts this event each year and awards limited edition T-Shirts to applicants who **make 4 pull requests during the month of October**.  
 
 *\* Note: T-Shirts available only for the first 55,000 participants*
 
-### 2. Sign up for Postman's Hacktoberfest 
-Sign up with this form. This will keep you in the loop with workshop accouncements and updates!
+
 
 ### 3. Choose your path!
 
