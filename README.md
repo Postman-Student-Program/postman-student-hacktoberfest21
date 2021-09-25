@@ -22,7 +22,7 @@ In the same way, designing an API's schema first allows teams to get on the same
 
 ## How to participate
 
-### 1. [Optional] Sign up for Hacktoberfest (by Digitalocean)
+### 1. [Optional] Sign up for Hacktoberfest (by DigitalOcean)
 
 DigitalOcean hosts this event each year and awards limited edition T-Shirts to applicants who **make 4 pull requests during the month of October**.  
 
