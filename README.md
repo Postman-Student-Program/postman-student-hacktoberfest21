@@ -64,5 +64,15 @@ If a repo had multiple contributors, each contributor should submit the same rep
 ## Prizes 
 
 ## Resources
+Join our [Postman Student Community Discord](https://discord.gg/Fm9Mcz26QF) for office hours, general help and fun if you haven’t already! 
+
+## Schedule
+|Title | Dates and Times |
+--------------------------
+|Hacktoberfest Kickoff | October 5, 2021, 9am - 10am PST |
+| Discord Office Hour IST | Thursdays, 8pm - 9pm IST |
+| Discord Office Hour PST | Wednesdays, 10:00am - 11:00am PST |
+| Postman Submission Deadline | Anytime on October 31 |
+
 
 
