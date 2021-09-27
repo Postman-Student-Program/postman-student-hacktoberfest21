@@ -68,7 +68,7 @@ If a repo had multiple contributors, each contributor should submit the same rep
 
 
 ## Prizes 
-$250 amazon gift card to a repo that meets the challenge requirements (chosen by raffle). This money can be split among contributors.
+One repo that meets the challenge requirements will be chosen by raffle to win a $250 amazon gift card. This money can be split among contributors.
 
 If you finish the challenge, you will have: 
 - a portfolio piece 
