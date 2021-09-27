@@ -9,10 +9,6 @@ See the OpenAPI schema for this API in the "API" tab:
 
 ## What is API-First? 
 
-API-First is the philosophy of **designing an API before writing ANY code**. This design is documented a **schema**.
-
-### What is a schema?
-
 API-First is the philosophy of defining an API before writing any code for a server or frontend. The routes, parameters, responses and other traits of an API can be clearly defined with a schema. You can think of a schema as a blueprint for an API. 
 
 With a schema as a single source of truth, teams can move quickly with a “divide and conquer” approach to building applications. For example, frontend developers can code a website that hits a mock server that returns fake data of the expected shape, without having to wait for the backend team to build a real server. Meanwhile, the backend team can start coding a server against tests that check that the API schema is being followed correctly. 
