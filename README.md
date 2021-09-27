@@ -1,4 +1,4 @@
-# 🎃 Postman Student API-First Hacktoberfest'21 
+# 🎃 Postman API-First Hacktoberfest for Students 
 
 This Hacktoberfest we are mixing it up - YOU get to create and maintain an open source repo (or work together with friends).
 
