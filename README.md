@@ -58,21 +58,27 @@ Submit your repo [here](https://docs.google.com/forms/d/e/1FAIpQLSeg8BVdg3fzuhwg
 If a repo had multiple contributors, each contributor should submit the same repo separately. 
 
 
-
 ## Workshops + Office hours
-
-## Prizes 
-
-## Resources
-Join our [Postman Student Community Discord](https://discord.gg/Fm9Mcz26QF) for office hours, general help and fun if you haven’t already! 
-
-## Schedule
 |Title | Dates and Times |
 | ---------| ----------------- |
 |Hacktoberfest Kickoff | October 5, 2021, 9am - 10am PST |
 | Discord Office Hour IST | Thursdays, 8pm - 9pm IST |
 | Discord Office Hour PST | Wednesdays, 10:00am - 11:00am PST |
 | Postman Submission Deadline | Anytime on October 31 |
+
+
+## Prizes 
+$250 amazon gift card to a repo that meets the challenge requirements (chosen by raffle). This money can be split among contributors.
+
+If you finish the challenge, you will have: 
+- a portfolio piece 
+- learned how to use Postman for API-First development
+
+
+## Resources
+Join our [Postman Student Community Discord](https://discord.gg/Fm9Mcz26QF) for office hours, general help and fun if you haven’t already! 
+
+
 
 
 
