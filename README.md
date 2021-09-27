@@ -68,7 +68,7 @@ Join our [Postman Student Community Discord](https://discord.gg/Fm9Mcz26QF) for 
 
 ## Schedule
 |Title | Dates and Times |
---------------------------
+| ---------| ----------------- |
 |Hacktoberfest Kickoff | October 5, 2021, 9am - 10am PST |
 | Discord Office Hour IST | Thursdays, 8pm - 9pm IST |
 | Discord Office Hour PST | Wednesdays, 10:00am - 11:00am PST |
