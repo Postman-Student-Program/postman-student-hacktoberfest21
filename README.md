@@ -13,11 +13,13 @@ API-First is the philosophy of **designing an API before writing ANY code**. Thi
 
 ### What is a schema?
 
-A **schema** is the blueprint of an API. The schema defines exactly what routes the API will have, what kind of parameters to expect, and what type of responses the API will return.
+API-First is the philosophy of defining an API before writing any code for a server or frontend. The routes, parameters, responses and other traits of an API can be clearly defined with a schema. You can think of a schema as a blueprint for an API. 
 
-Imagine a team building a house without a [blueprint](http://www.designdepotinc.com/understanding-blueprints/). It would be chaos! The plumber would have to wait for the carpenters to start building the flooring and walls before they could guess where to install the shower and how much piping to procur. The painter wouldn't know how much paint to get. The electrician might buy the wrong type and number of wall sockets. To prevent this chaos, the first task in the house building process is to design a blueprint. This blueprint helps everyone on the team know exactly what is being built before any work starts, allowing people to divide and conquer toward a common goal. 
+With a schema as a single source of truth, teams can move quickly with a “divide and conquer” approach to building applications. For example, frontend developers can code a website that hits a mock server that returns fake data of the expected shape, without having to wait for the backend team to build a real server. Meanwhile, the backend team can start coding a server against tests that check that the API schema is being followed correctly. 
 
-In the same way, designing an API's schema first allows teams to get on the same page about what is being built.
+There are several specification formats for defining an API schema. One is called [OpenAPI Specification](https://swagger.io/specification/) (previously known as Swagger), which we are using in this event to define the Halloween Costume Contest API! 
+
+Postman provides you with the tools you need to develop with an API-First approach. From an API schema, you can auto-generate mock servers, tests, documentation, and even server code. See more about how Postman can help you drive an API-First development lifecycle [here](https://www.postman.com/use-cases/api-first-development/).
 
 
 ## Rules 
