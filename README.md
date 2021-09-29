@@ -71,6 +71,7 @@ One repo that meets the challenge requirements will be chosen by raffle to win a
 If you finish the challenge, you will have: 
 - a portfolio piece 
 - learned how to use Postman for API-First development
+- experienced open source software development!
 
 
 ## Resources
