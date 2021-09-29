@@ -5,7 +5,7 @@ This Hacktoberfest we are mixing it up - YOU get to create and maintain an open 
 The challenge will be to build either an API or a website that consumes the API. The interface for the API has already been designed: it is a **Halloween Costume Contest API**, that allows you to create, read, update, delete and upvote costume party contestants.
 
 See the OpenAPI schema for this API in the "API" tab:
-[Show me the schema!](https://postman.postman.co/workspace/Postman-Hacktoberfest'21-~1ae1036b-6583-4883-949e-adf8b55687a1/overview)
+[Show me the schema!](https://www.postman.com/postman/workspace/postman-hacktoberfest-21/api/b8ee9c39-4eb5-46c0-94e0-d643d9064ba9/version/77aea2ac-8b58-4314-82a6-847b40547c1f?tab=define)
 
 ## What is API-First? 
 
