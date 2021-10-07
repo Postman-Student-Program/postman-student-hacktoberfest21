@@ -32,7 +32,7 @@ Sign up with [this form](https://docs.google.com/forms/d/e/1FAIpQLSdiqnbbSSA5a3i
 
 DigitalOcean hosts this event each year and awards limited edition T-Shirts to applicants who **make 4 pull requests during the month of October**.  
 
-*\* Note: T-Shirts available only for the first 55,000 participants*
+*\* Note: T-Shirts available only for the first 50,000 participants*
 
 
 ### 3. Choose your path!
